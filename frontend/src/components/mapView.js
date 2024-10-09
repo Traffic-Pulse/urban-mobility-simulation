@@ -33,6 +33,19 @@ const TrafficMap = () => {
     if (rectangle) {
       const bounds = rectangle.getBounds();
       const bboxString = bounds.toBBoxString();
+
+      axios.get(`http://localhost:5000/api/osm/download?bbox=${bboxString}`, {
+        responseType: 'blob'  // Get response as blob
+      })
+      .then(response => {
+        const blob = new Blob([response.data], { type: 'application/octet-stream' });
+        saveAs(blob, 'map.osm');
+        console.log('OSM data downloaded successfully');
+      })
+      .catch(error => {
+        console.error('Error downloading OSM data:', error);
+      });
+      
       const bboxObject = bboxString.split(',').reduce((acc, val, index) => {
         switch (index) {
           case 0:
@@ -50,31 +63,7 @@ const TrafficMap = () => {
         }
         return acc;
       }, {});
-
-      const isEmpty = (obj) => Object.keys(obj).length === 0;
-      if (!isEmpty(bboxObject)) {
-        // Construct Overpass API query (to download map data for the bounding box)
-        const overpassUrl = `https://overpass-api.de/api/map?bbox=${bboxString}`;
-
-        // Function to download the OSM file
-        async function downloadOSMFile() {
-            try {
-                const response = await axios.get(overpassUrl, { responseType: 'blob' }); // Get response as blob
-
-                // Create a blob from the response data
-                const blob = new Blob([response.data], { type: 'application/octet-stream' });
-
-                // Use file-saver to save the blob as a file
-                saveAs(blob, 'map.osm');
-                console.log('OSM data downloaded successfully');
-            } catch (error) {
-                console.error('Error downloading OSM data:', error);
-            }
-        }
-        downloadOSMFile();
-      } else {
-        console.log("Coordinate object is empty");
-      }
+      
       setCordinates(bboxObject);
     }
   };
