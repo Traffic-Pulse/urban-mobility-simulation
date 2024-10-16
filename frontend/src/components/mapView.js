@@ -70,7 +70,10 @@ const TrafficMap = () => {
 
   return (
     <div>
-      <MapContainer
+      <div>
+        
+      </div>
+      {/* <MapContainer
         center={[51.505, -0.09]}
         zoom={13}
         style={{ height: '600px', width: '100%' }}
@@ -102,7 +105,7 @@ const TrafficMap = () => {
         </FeatureGroup>
       </MapContainer>
       
-      <button onClick={exportOSMFile}>Download Selected Area (.osm)</button>
+      <button onClick={exportOSMFile}>Download Selected Area (.osm)</button> */}
     </div>
   );
 };
