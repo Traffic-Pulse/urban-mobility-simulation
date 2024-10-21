@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import TrafficMap from './components/mapView';
 
 
 const App = () => {
+  const mapRef = useRef();
+
+  const handleDownloadClick = () => {
+    if (mapRef.current) {
+      mapRef.current(); // Call the exportOSMFile function
+    }
+  };
+
   return (
     <div className=''>
       <NavBar />
@@ -15,7 +23,7 @@ const App = () => {
                 <SearchBar />
                 
                 <div className='mt-3'>
-                  <button type='button' className='w-full rounded-lg px-3 py-1 bg-blue-500 text-blue-100 hover:bg-blue-600 duration-300'>Generate Simulation</button>
+                  <button type='button' onClick={handleDownloadClick} className='w-full rounded-lg px-3 py-1 bg-blue-500 text-blue-100 hover:bg-blue-600 duration-300'>Generate Simulation</button>
                 </div>
               </div>
             </div>
@@ -26,24 +34,12 @@ const App = () => {
             {/* <h1 class="text-gray-700 text-xs uppercase tracking-wider">Content</h1> */}
 
             <div class="bg-white rounded shadow font-semibold text-center hover:shadow-md">
-                <TrafficMap />
+                <TrafficMap exportOSMFileRef={mapRef} />
             </div>
             
           </div>
         </main>
       </div>
-      {/* <div className='container'>
-        <div className='sideNav'>
-          <div>
-
-          </div>
-        </div>
-
-        <div className="content">
-content
-        </div>
-      </div> */}
-      {/* <TrafficMap /> */}
     </div>
   );
 };
