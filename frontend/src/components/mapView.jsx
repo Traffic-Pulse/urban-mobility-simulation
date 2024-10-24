@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import { MapContainer, TileLayer, FeatureGroup, Popup, useMap } from 'react-leaflet';
 import { EditControl } from 'react-leaflet-draw';
 import 'leaflet/dist/leaflet.css';
@@ -6,8 +6,7 @@ import 'leaflet-draw/dist/leaflet.draw.css';
 import L from 'leaflet';
 import { saveAs } from 'file-saver';
 import axios from 'axios';
-import debounce from 'lodash.debounce';
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import { AppContext } from "../helpers/Provider";
 
 // Component to move the map view to the searched location
 const FlyToLocation = ({ location }) => {
@@ -23,15 +22,12 @@ const FlyToLocation = ({ location }) => {
 };
 
 const TrafficMap = ({ exportOSMFileRef }) => {
+  const { searchedLocation, setIsLoading } = useContext(AppContext);
+
   const [map, setMap] = useState(null);
   const [coordinates, setCoordinates] = useState({});
   const drawnItemsRef = useRef(new L.FeatureGroup());
   const [rectangle, setRectangle] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchedLocation, setSearchedLocation] = useState(null);
-
-  // OpenStreetMap Geosearch provider
-  const provider = new OpenStreetMapProvider();
 
   const handleCreated = (e) => {
     const layer = e.layer;
@@ -51,6 +47,7 @@ const TrafficMap = ({ exportOSMFileRef }) => {
       const bounds = rectangle.getBounds();
       const bboxString = bounds.toBBoxString();
 
+      // setIsLoading(true);
       axios
         .get(`http://localhost:5000/api/osm/download?bbox=${bboxString}`, {
           responseType: 'blob',
@@ -58,9 +55,11 @@ const TrafficMap = ({ exportOSMFileRef }) => {
         .then((response) => {
           const blob = new Blob([response.data], { type: 'application/octet-stream' });
           saveAs(blob, 'map.osm');
+          // setIsLoading(false);
         })
         .catch((error) => {
           console.error('Error downloading OSM data:', error);
+          // setIsLoading(false);
         });
 
       const bboxObject = bboxString.split(',').reduce((acc, val, index) => {
@@ -85,63 +84,12 @@ const TrafficMap = ({ exportOSMFileRef }) => {
     }
   };
 
-  // Search function for the location
-  const searchLocation = (query) => {
-    if (!query) {
-      setSearchedLocation(null);
-      return;
-    }
-
-    provider
-      .search({ query })
-      .then((results) => {
-        if (results && results.length > 0) {
-          const { x: lon, y: lat } = results[0]; // Extract lon and lat from the first result
-          const location = [lat, lon];
-          setSearchedLocation(location); // Set the searched location for the map to fly to
-        } else {
-          setSearchedLocation(null);
-        }
-      })
-      .catch((error) => {
-        console.error('Error searching location:', error);
-      });
-  };
-
-  // Debounce to limit API calls
-  const debouncedSearch = useRef(
-    debounce((query) => {
-      searchLocation(query);
-    }, 500)
-  ).current;
-
-  const handleInputChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-    debouncedSearch(query); // Call debounced search when typing
-  };
-
   useEffect(() => {
     exportOSMFileRef.current = exportOSMFile;
   }, [rectangle]);
 
-  useEffect(() => {
-    return () => {
-      debouncedSearch.cancel(); // Cleanup debounce on unmount
-    };
-  }, []);
-
   return (
     <div>
-      <div className="search-bar" style={{ marginBottom: '10px' }}>
-        <input
-          type="text"
-          placeholder="Enter location to search..."
-          value={searchQuery}
-          onChange={handleInputChange}
-        />
-      </div>
-
       <MapContainer
         center={[51.505, -0.09]}
         zoom={13}

@@ -1,9 +1,59 @@
-import React from 'react'
+import React, { useContext, useState, useRef, useEffect } from 'react'
+import { AppContext } from "../helpers/Provider";
+import debounce from 'lodash.debounce';
+import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
 const SearchBar = () => {
+  const { searchQuery, setSearchQuery, setSearchedLocation } = useContext(AppContext);
+  
+  // OpenStreetMap Geosearch provider
+  const provider = new OpenStreetMapProvider();
+  
+  // Search function for the location
+  const searchLocation = (query) => {
+    if (!query) {
+      setSearchedLocation(null);
+      return;
+    }
+
+    provider
+      .search({ query })
+      .then((results) => {
+        if (results && results.length > 0) {
+          const { x: lon, y: lat } = results[0]; // Extract lon and lat from the first result
+          const location = [lat, lon];
+          setSearchedLocation(location); // Set the searched location for the map to fly to
+        } else {
+          setSearchedLocation(null);
+        }
+      })
+      .catch((error) => {
+        console.error('Error searching location:', error);
+      });
+  };
+
+  // Debounce to limit API calls
+  const debouncedSearch = useRef(
+    debounce((query) => {
+      searchLocation(query);
+    }, 500)
+  ).current;
+  
+  const handleInputChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    debouncedSearch(query); // Call debounced search when typing
+  };
+
+  useEffect(() => {
+    return () => {
+      debouncedSearch.cancel(); // Cleanup debounce on unmount
+    };
+  }, []);
+
   return (
     <div className="w-full search-container max-w-2xl">
-      <form role="search" action="/search" className="search relative">
+      <div className="search relative">
         <div className="relative z-10">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
@@ -36,21 +86,19 @@ const SearchBar = () => {
             autoCapitalize="none"
             spellCheck="false"
             name="q"
-            placeholder="Search something"
+            placeholder="Enter location to search..."
             title="Search"
             role="searchbox"
             aria-label="Search"
             aria-autocomplete="list"
             required
             id="search"
-            className={`block w-full outline-0 p-2 pl-10 text-sm text-gray-900 bg-white  border border-gray-300 rounded-lg
-            `}
-            // onChange={onSearch}
-            value={"query"}
+            className={`block w-full outline-0 p-2 pl-10 text-sm text-gray-900 bg-white  border border-gray-300 rounded-lg`}
+            value={searchQuery}
+            onChange={handleInputChange}
           />
         </div>
-        
-      </form>
+      </div>
     </div>
   )
 }
