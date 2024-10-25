@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from 'react'
 import SideNav from '../components/SideNav';
-import TrafficMap from '../components/mapView';
+import TrafficMap from '../components/MapView';
 import { AppContext } from "../helpers/Provider";
 
 const Home = () => {
