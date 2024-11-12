@@ -15,6 +15,9 @@ const NavBar = () => {
                     <NavLink className="md:p-4 py-2 block text-[#2f3b52] hover:text-[#14838a]" to="/">Home</NavLink>
                 </li>
                 <li>
+                    <NavLink className="md:p-4 py-2 block text-[#2f3b52] hover:text-[#14838a]" to="/simulation">Simulation</NavLink>
+                </li>
+                <li>
                     <NavLink className="md:p-4 py-2 block text-[#2f3b52] hover:text-[#14838a]" to="/contact">Contact</NavLink>
                 </li>
                 <li>
