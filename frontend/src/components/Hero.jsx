@@ -12,12 +12,12 @@ const Hero = () => {
       id='home'
       className='w-full flex flex-col xl:flex-row justify-center min-h-screen gap-10 max-container'
     >
-      <div className='relative w-full xl:w-2/5 flex flex-col justify-center items-start max-xl:padding-x pt-28'>
+      <div className='relative w-full xl:w-2/5 flex flex-col justify-center items-start max-xl:padding-x pt-28 bg-red-300 px-10'>
         <p className='text-xl font-montserrat text-coral-green'>
           Our Summer collections
         </p>
 
-        <h1 className='mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
+        <h1 className='text-left mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
           <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10'>
             The New Arrival
           </span>
@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className='relative flex-1 flex justify-center items-center xl:min-h-screen max-xl:pt-10 max-xl:pb-20 bg-primary bg-hero bg-cover bg-center'>
+      <div className='relative flex-1 flex justify-end items-center xl:min-h-screen max-xl:pt-1 max-xl:pb-20 bg-primary bg-red-800 bg-hero bg-cover bg-center px-10'>
         <img
           src={img2}
           alt='shoe colletion'
