@@ -41,7 +41,14 @@ const NavBar = () => {
             <NavLink className="block px-4 py-2 text-[20px] hover:text-[#D41317]" to="/contact">Contact Us</NavLink>
           </li>
           <li>
-            <NavLink className="block px-4 py-2 text-[20px] hover:text-[#D41317]" to="/policies">GitHub</NavLink>
+            <a 
+              className="block px-4 py-2 text-[20px] hover:text-[#D41317]" 
+              href="https://github.com/Traffic-Pulse/urban-mobility-simulation" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
           </li>
         </ul>
       </div>
