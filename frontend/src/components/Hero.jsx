@@ -1,71 +1,48 @@
-import React, { useState } from 'react'
-import Button from "../components/Button";
-import HeroCard from "../components/HeroCard";
-import { shoes, statistics } from "../constants";
-import { img2 } from "../images";
+import React from 'react'
+import HeroVideo from '../images/Hero_video.mp4';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
-  const [bigShoeImg, setBigShoeImg] = useState(img2);
-
   return (
     <section
       id='home'
-      className='w-full flex flex-col xl:flex-row justify-center min-h-screen gap-10 max-container'
+      className='relative h-screen-minus-header flex flex-col xl:flex-row justify-center max-container'
     >
-      <div className='relative w-full xl:w-2/5 flex flex-col justify-center items-start max-xl:padding-x pt-28 bg-red-300 px-10'>
-        <p className='text-xl font-montserrat text-coral-green'>
-          Our Summer collections
-        </p>
+      {/* Background Video */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src={HeroVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-        <h1 className='text-left mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82px] font-bold'>
-          <span className='xl:bg-white xl:whitespace-nowrap relative z-10 pr-10'>
-            The New Arrival
-          </span>
-          <br />
-          <span className='text-coral-green inline-block mt-3'>Sneak-kers</span>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+
+      {/* Content */}
+      <div className="relative z-10 text-left px-4 sm:px-8 md:px-12 flex flex-col justify-center h-full w-full">
+        <h1 className="text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+          Traffic Pulse:
         </h1>
-        <p className='font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm'>
-          Discover the latest Sneak-kers products, as well as excellent comfort and innovation for your active lifestyle.
+        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+          Redefine Traffic
         </p>
-
-        <Button label='Shop now' />
-
-        <div className='flex justify-start items-start flex-wrap w-full mt-20 gap-16'>
-          {statistics.map((stat, index) => (
-            <div key={index}>
-              <p className='text-4xl font-palanquin font-bold'>{stat.value}</p>
-              <p className='leading-7 font-montserrat text-slate-gray'>
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className='relative flex-1 flex justify-end items-center xl:min-h-screen max-xl:pt-1 max-xl:pb-20 bg-primary bg-red-800 bg-hero bg-cover bg-center px-10'>
-        <img
-          src={img2}
-          alt='shoe colletion'
-          width={610}
-          height={502}
-          className='object-contain relative z-10'
-        />
-
-        <div className='flex sm:gap-6 gap-4 absolute -bottom-[5%] sm:left-[10%] max-sm:px-6'>
-          {shoes.map((image, index) => (
-            <div key={index}>
-              <HeroCard
-                key={index}
-                imgURL={image}
-                changeBigShoeImage={(shoe) => setBigShoeImg(shoe)}
-                bigShoeImg={bigShoeImg}
-              />
-            </div>
-          ))}
-        </div>
+        <p className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4">
+          Redefine Cities
+        </p>
+        <Link
+          to="/simulation"
+          className="max-w-max px-6 py-3 bg-white text-[20px] text-[#1A2B6D] font-semibold rounded-lg shadow-md hover:text-[#D41317] transition"
+        >
+          Simulation
+        </Link>
       </div>
     </section>
   )
 }
 
-export default Hero
+export default Hero;
