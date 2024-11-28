@@ -1,4 +1,4 @@
-import { img2, img1 } from "../images"
+import { img2, img1, Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7 } from "../images"
 import { facebook, instagram, shieldTick, support, truckFast, twitter } from "../images/icons";
 
 export const shoes = [
@@ -57,20 +57,20 @@ export const services = [
 
   export const reviews1 = [
 	{
-		imgURL: img1,
-		customerName: 'Rukit Sou',
+		imgURL: Picture1,
+		customerName: 'Rutvik Pathak',
 		rating: 4.5,
 		feedback: "The goods not only met, but also beyond my expectations. I'll definitely be back!"
 	  },
 	  {
-		imgURL: img1,
-		customerName: 'Arya Emi David',
+		imgURL: Picture2,
+		customerName: 'Narveer Saharan',
 		rating: 4.5,
 		feedback: "My expectations were not only met, but beyond. I will absolutely return!"
 	  },
 	  {
-		imgURL: img2,
-		customerName: 'Oweis Joshua',
+		imgURL: Picture3,
+		customerName: 'Oweipadei Joshua Bayefa',
 		rating: 5.0,
 		feedback: "My expectations were not only satisfied, but exceeded by the product. I will most certainly be a repeat buyer!"
 	  },
@@ -78,20 +78,20 @@ export const services = [
 
   export const reviews2 = [
 	{
-		imgURL: img1,
-		customerName: 'Benjamin Sou',
+		imgURL: Picture7,
+		customerName: 'Mamata Kandel',
 		rating: 4.5,
 		feedback: "The goods not only met, but also beyond my expectations. I'll definitely be back!"
 	  },
 	  {
-		imgURL: img2,
-		customerName: 'Arya Emi David',
+		imgURL: Picture6,
+		customerName: 'Tanisha Gupta',
 		rating: 4.5,
 		feedback: "My expectations were not only met, but beyond. I will absolutely return!"
 	  },
 	  {
-		imgURL: img1,
-		customerName: 'Oweis Joshua',
+		imgURL: Picture4,
+		customerName: 'Harshdeep Kaur',
 		rating: 5.0,
 		feedback: "My expectations were not only satisfied, but exceeded by the product. I will most certainly be a repeat buyer!"
 	  },
@@ -99,8 +99,8 @@ export const services = [
 
   export const reviews3 = [
 	  {
-		imgURL: img1,
-		customerName: 'Oweis Joshua',
+		imgURL: Picture5,
+		customerName: 'Beant Kaur',
 		rating: 5.0,
 		feedback: "My expectations were not only satisfied, but exceeded by the product. I will most certainly be a repeat buyer!"
 	  }
