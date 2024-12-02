@@ -49,7 +49,7 @@ const MappView = ({ exportOSMFileRef }) => {
 
       setIsLoading(true);
       axios
-        .get(`http://localhost:5000/api/osm/download?bbox=${bboxString}`, {
+        .get(`https://traffic-pulse-api.onrender.com/api/osm/download?bbox=${bboxString}`, {
           responseType: 'blob',
         })
         .then((response) => {
