@@ -11,6 +11,7 @@ const Feature2 = () => {
           width={773}
           height={687}
           className='object-contain w-full'
+          alt="img"
         />
       </div>
       <div className='flex flex-1 flex-col'>

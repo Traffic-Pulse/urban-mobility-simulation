@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
-import { MapContainer, TileLayer, FeatureGroup, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, FeatureGroup, useMap } from 'react-leaflet';
 import { EditControl } from 'react-leaflet-draw';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-draw/dist/leaflet.draw.css';
@@ -47,7 +47,7 @@ const TrafficMap = ({ exportOSMFileRef }) => {
       const bounds = rectangle.getBounds();
       const bboxString = bounds.toBBoxString();
 
-      // setIsLoading(true);
+      setIsLoading(true);
       axios
         .get(`http://localhost:5000/api/osm/download?bbox=${bboxString}`, {
           responseType: 'blob',
@@ -55,11 +55,11 @@ const TrafficMap = ({ exportOSMFileRef }) => {
         .then((response) => {
           const blob = new Blob([response.data], { type: 'application/octet-stream' });
           saveAs(blob, 'map.osm');
-          // setIsLoading(false);
+          setIsLoading(false);
         })
         .catch((error) => {
           console.error('Error downloading OSM data:', error);
-          // setIsLoading(false);
+          setIsLoading(false);
         });
 
       const bboxObject = bboxString.split(',').reduce((acc, val, index) => {
@@ -76,6 +76,8 @@ const TrafficMap = ({ exportOSMFileRef }) => {
           case 3:
             acc.maxY = parseFloat(val);
             break;
+          default:
+            break;
         }
         return acc;
       }, {});
@@ -87,6 +89,8 @@ const TrafficMap = ({ exportOSMFileRef }) => {
   useEffect(() => {
     exportOSMFileRef.current = exportOSMFile;
   }, [rectangle]);
+
+  console.log(map, coordinates)
 
   return (
     <div>

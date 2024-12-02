@@ -8,7 +8,7 @@ export const shoes = [
 	},
 	{
 	  thumbnail: img2,
-	  bigShoe: img2,
+	  bigShoe: img1,
 	},
 	{
 	  thumbnail: img2,

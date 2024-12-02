@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { star } from "../images/icons";
-
 const Member = ({ imgURL, customerName, role, position }) => {
   return (
     <div className='flex justify-center items-center flex-col'>

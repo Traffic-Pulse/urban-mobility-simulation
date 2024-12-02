@@ -1,5 +1,4 @@
 import { img2 } from "../images";
-import Button from "../components/Button";
 
 const Feature1 = () => {
   return (
