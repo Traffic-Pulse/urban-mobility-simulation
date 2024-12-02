@@ -4,7 +4,7 @@ import MappView from '../components/MappView';
 import { AppContext } from "../helpers/Provider";
 
 const Simulation = () => {
-//   const { isLoading } = useContext(AppContext);
+  const { isLoading } = useContext(AppContext);
 	const mapRef = useRef();
 
   const handleDownloadClick = () => {
