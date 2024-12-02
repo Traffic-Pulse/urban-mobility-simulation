@@ -1,10 +1,10 @@
 import React, { useRef, useContext } from 'react'
 import SideNav from '../components/SideNav';
-import MapView from '../components/MapView';
+import MappView from '../components/MappView';
 import { AppContext } from "../helpers/Provider";
 
 const Simulation = () => {
-  const { isLoading } = useContext(AppContext);
+//   const { isLoading } = useContext(AppContext);
 	const mapRef = useRef();
 
   const handleDownloadClick = () => {
@@ -20,7 +20,7 @@ const Simulation = () => {
 				<div class="p-4">
 					<div class="bg-white rounded shadow font-semibold text-center hover:shadow-md">
 						{!isLoading ? (
-							<MapView exportOSMFileRef={mapRef} />
+							<MappView exportOSMFileRef={mapRef} />
 						) : (
 							<div>Loading...</div>
 						)}

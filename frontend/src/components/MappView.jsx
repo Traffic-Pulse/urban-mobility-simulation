@@ -21,7 +21,7 @@ const FlyToLocation = ({ location }) => {
   return null;
 };
 
-const MapView = ({ exportOSMFileRef }) => {
+const MappView = ({ exportOSMFileRef }) => {
   const { searchedLocation, setIsLoading } = useContext(AppContext);
 
   const [map, setMap] = useState(null);
@@ -132,4 +132,4 @@ const MapView = ({ exportOSMFileRef }) => {
   );
 };
 
-export default MapView;
+export default MappView;
