@@ -1,5 +1,5 @@
-import { arrowRight } from "../images/icons";
-import { img2 } from "../images";
+import { arrowRight,github } from "../images/icons";
+import { img3 } from "../images";
 import Button from "../components/Button";
 
 const Feature2 = () => {
@@ -7,8 +7,7 @@ const Feature2 = () => {
     <section className='flex justify-between items-center max-xl:flex-col-reverse gap-10 max-container py-[90px] px-20'>
       <div className='flex flex-1'>
         <img
-          src={img2}
-          alt='Shoe Promotion'
+          src={img3}
           width={773}
           height={687}
           className='object-contain w-full'
@@ -16,23 +15,30 @@ const Feature2 = () => {
       </div>
       <div className='flex flex-1 flex-col'>
         <h2 className='text-4xl font-palanquin font-bold'>
-          <span className='text-coral-green'>Special </span>
-          Offer
+          <span className='text-coral-green'>Our </span>
+          Solution
         </h2>
         <p className='mt-4 info-text'>
-          Set out on a shopping adventure that will transform your shopping experience with unbelievable deals. From premium options to exceptional savings, we provide unrivaled value that sets us apart.
+        Experience a groundbreaking approach to urban traffic management with our advanced Traffic and Urban Mobility Simulation. By combining cutting-edge technology and data-driven insights, our solution empowers city planners to analyze traffic flow, reduce congestion, and design smarter, more efficient transportation systems.
         </p>
         <p className='mt-6 info-text'>
-          Navigate a realm of possibilities tailored to suit your specific desires while exceeding your highest expectations. Your trip with us has been nothing short of extraordinary.
+        Explore a versatile platform that models diverse scenarios, evaluates environmental impacts, and offers innovative solutions for urban mobility challenges. Our simulation tool is designed to transform urban living by creating sustainable, connected, and resilient cities for the future.
         </p>
         <div className='mt-11 flex flex-wrap gap-4'>
-          <Button label='Shop now' iconURL={arrowRight} />
-          <Button
-            label='Learn more'
-            backgroundColor='bg-white'
-            borderColor='border-slate-gray'
-            textColor='text-slate-gray'
-          />
+        <Button 
+          label='Contact Us' 
+          iconURL={arrowRight} 
+          href='/contact' 
+        />
+
+        <Button
+          label='Github'
+          iconURL={github}
+          backgroundColor='bg-white'
+          borderColor='border-slate-gray'
+          textColor='text-slate-gray'
+          href='https://github.com/Traffic-Pulse/urban-mobility-simulation/tree/development'
+        />
         </div>
       </div>
     </section>

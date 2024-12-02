@@ -105,3 +105,35 @@ export const services = [
 		position: "Member"
 	  }
   ];
+
+  export const footerLinks = [
+	{
+	  title: "Go to",
+	  links: [
+		{ name: "Contact", link: "/contact" },
+		{ name: "Our Services", link: "/policies" },
+		{ name: "Github", link: "https://github.com/Traffic-Pulse/urban-mobility-simulation" },
+	  ],
+	},
+	{
+	  title: "Help",
+	  links: [
+		{ name: "About us", link: "/" },
+		{ name: "FAQs", link: "/" },
+	  ],
+	},
+	{
+	  title: "Get in touch",
+	  links: [
+		{ name: "trafficpulse.simulation@gmail.com", link: "mailto:trafficpulse.simulation@gmail.com" },
+		{ name: "Tel: +1 (519) 572-2515", link: "tel:+1 (519) 572-2515" },
+		{ name: "4000 Victoria Park Ave, North York, ON M2H 3S7", link: "Address: 4000 Victoria Park Ave, North York, ON M2H 3S7" },
+	  ],
+	},
+  ];
+  
+  export const socialMedia = [
+	{ src: facebook, alt: "facebook logo", color: "#3b5999" },
+	{ src: twitter, alt: "twitter logo", color: "#1da1f2" },
+	{ src: instagram, alt: "instagram logo", color: "#e4405f" },
+  ];
