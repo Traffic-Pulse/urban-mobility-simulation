@@ -59,20 +59,20 @@ export const services = [
 	{
 		imgURL: Picture1,
 		customerName: 'Rutvik Pathak',
-		rating: 4.5,
-		feedback: "The goods not only met, but also beyond my expectations. I'll definitely be back!"
+		role: "Visualization Developer",
+		position: "Project Leader"
 	  },
 	  {
 		imgURL: Picture2,
 		customerName: 'Narveer Saharan',
-		rating: 4.5,
-		feedback: "My expectations were not only met, but beyond. I will absolutely return!"
+		role: "Backend Developer",
+		position: "Co-Leader"
 	  },
 	  {
 		imgURL: Picture3,
 		customerName: 'Oweipadei Joshua Bayefa',
-		rating: 5.0,
-		feedback: "My expectations were not only satisfied, but exceeded by the product. I will most certainly be a repeat buyer!"
+		role: "Frontend Developer",
+		position: "Co-Leader"
 	  },
   ];
 
@@ -80,20 +80,20 @@ export const services = [
 	{
 		imgURL: Picture7,
 		customerName: 'Mamata Kandel',
-		rating: 4.5,
-		feedback: "The goods not only met, but also beyond my expectations. I'll definitely be back!"
+		role: "QA Tester",
+		position: "Co-Leader"
 	  },
 	  {
 		imgURL: Picture6,
 		customerName: 'Tanisha Gupta',
-		rating: 4.5,
-		feedback: "My expectations were not only met, but beyond. I will absolutely return!"
+		role: "Traffic Standard Analysist",
+		position: "Member"
 	  },
 	  {
 		imgURL: Picture4,
 		customerName: 'Harshdeep Kaur',
-		rating: 5.0,
-		feedback: "My expectations were not only satisfied, but exceeded by the product. I will most certainly be a repeat buyer!"
+		role: "Database Administrator",
+		position: "Member"
 	  },
   ];
 
@@ -101,7 +101,7 @@ export const services = [
 	  {
 		imgURL: Picture5,
 		customerName: 'Beant Kaur',
-		rating: 5.0,
-		feedback: "My expectations were not only satisfied, but exceeded by the product. I will most certainly be a repeat buyer!"
+		role: "Data Analysist",
+		position: "Member"
 	  }
   ];

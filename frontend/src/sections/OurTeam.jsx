@@ -6,13 +6,15 @@ const OurTeam = () => {
     <div>
       <section className='max-container px-20 py-[90px] bg-[#f1f1f1]'>
         <h3 className='font-palanquin text-center text-4xl font-bold'>
-          What Our
-          <span className='text-coral-green'> Customers </span>
-          Say?
+          Meet Our
+          <span className='text-coral-green'> Amazing Team </span>
+          !
         </h3>
         <p className='m-auto mt-4 max-w-lg  text-center info-text'>
-          Hear genuine stories from our satisfied customers about their
-          exceptional experiences with us.
+        Our dedicated team is the backbone of our success, driven by passion, 
+        innovation, and a shared commitment to delivering excellence in every 
+        aspect of our work. Together, we strive to create meaningful experiences 
+        for our customers and partners.
         </p>
 
         <div className='mt-24 flex flex-1 justify-evenly items-center max-lg:flex-col gap-14'>
@@ -21,8 +23,8 @@ const OurTeam = () => {
               key={index}
               imgURL={review.imgURL}
               customerName={review.customerName}
-              rating={review.rating}
-              feedback={review.feedback}
+              role={review.role}
+              position={review.position}
             />
           ))}
         </div>
@@ -33,8 +35,8 @@ const OurTeam = () => {
               key={index}
               imgURL={review.imgURL}
               customerName={review.customerName}
-              rating={review.rating}
-              feedback={review.feedback}
+              role={review.role}
+              position={review.position}
             />
           ))}
         </div>
@@ -45,8 +47,8 @@ const OurTeam = () => {
               key={index}
               imgURL={review.imgURL}
               customerName={review.customerName}
-              rating={review.rating}
-              feedback={review.feedback}
+              role={review.role}
+              position={review.position}
             />
           ))}
         </div>
