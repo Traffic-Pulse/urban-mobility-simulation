@@ -1,6 +1,6 @@
 import React, { useRef, useContext } from 'react'
 import SideNav from '../components/SideNav';
-import TrafficMap from '../components/MapView';
+import MapView from '../components/MapView';
 import { AppContext } from "../helpers/Provider";
 
 const Simulation = () => {
@@ -20,7 +20,7 @@ const Simulation = () => {
 				<div class="p-4">
 					<div class="bg-white rounded shadow font-semibold text-center hover:shadow-md">
 						{!isLoading ? (
-							<TrafficMap exportOSMFileRef={mapRef} />
+							<MapView exportOSMFileRef={mapRef} />
 						) : (
 							<div>Loading...</div>
 						)}
