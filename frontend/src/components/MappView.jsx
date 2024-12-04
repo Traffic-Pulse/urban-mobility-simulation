@@ -93,11 +93,11 @@ const MappView = ({ exportOSMFileRef }) => {
   console.log(map, coordinates)
 
   return (
-    <div>
+    <div style={{ height: '100%', overflow: 'hidden' }}>
       <MapContainer
         center={[51.505, -0.09]}
         zoom={13}
-        style={{ height: '600px', width: '100%' }}
+       style={{ height: '600px', width: '100%' }}
         whenCreated={setMap}
       >
         <TileLayer

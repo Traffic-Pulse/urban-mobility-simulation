@@ -16,8 +16,8 @@ const Simulation = () => {
 	return (
 		<div>
 			<SideNav onDownloadClick={handleDownloadClick} />
-			<main class="pt-16 sm:pl-64">
-				<div class="p-4">
+			<main class="pt-0 sm:pl-64">
+				<div class="p-2">
 					<div class="bg-white rounded shadow font-semibold text-center hover:shadow-md">
 						{!isLoading ? (
 							<MappView exportOSMFileRef={mapRef} />

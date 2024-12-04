@@ -1,5 +1,5 @@
-import { img2, img1, Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7 } from "../images"
-import { facebook, instagram, shieldTick, support, truckFast, twitter } from "../images/icons";
+import { img2, img1, Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7, icon1, icon2, icon3, icon4 } from "../images"
+import { environment, facebook, instagram, realtime, twitter } from "../images/icons";
 
 export const shoes = [
 	{
@@ -24,34 +24,34 @@ export const statistics = [
 
 export const services = [
 	{
-	  imgURL: truckFast,
-	  label: "Free shipping",
-	  subtext: "Enjoy seamless shopping with our complimentary shipping service."
+	  imgURL: icon1,
+	  label: "Infrastructure Planning",
+	  subtext: "Planners lack data-driven insights, hindering effective resource allocation and road planning in urban areas."
 	},
 	{
-	  imgURL: shieldTick,
-	  label: "Secure Payment",
-	  subtext: "Experience worry-free transactions with our secure payment options."
+	  imgURL: icon2,
+	  label: "Traffic Management",
+	  subtext: "Limited data hampers traffic signal optimization, causing delays and commuter frustration."
 	},
 	{
-	  imgURL: support,
-	  label: "Love to help you",
-	  subtext: "Our dedicated team is here to assist you every step of the way."
+	  imgURL: icon3,
+	  label: "Identifying High-Risk Areas",
+	  subtext: "Without simulations, cities can't pinpoint congestion or accident zones."
 	},
 	{
-		imgURL: truckFast,
-		label: "Free shipping",
-		subtext: "Enjoy seamless shopping with our complimentary shipping service."
+		imgURL: icon4,
+		label: "Integration Complexity",
+		subtext: "Integrating diverse data and systems into a simulation requires compatibility and technical expertise."
 	  },
 	  {
-		imgURL: shieldTick,
-		label: "Secure Payment",
-		subtext: "Experience worry-free transactions with our secure payment options."
+		imgURL: realtime,
+		label: "Real-Time Accuracy",
+		subtext: "Real-time simulations need accurate data updates and robust synchronization."
 	  },
 	  {
-		imgURL: support,
-		label: "Love to help you",
-		subtext: "Our dedicated team is here to assist you every step of the way."
+		imgURL: environment,
+		label: "Environmental Impact",
+		subtext: "Simulations assess traffic impact, supporting emission reduction and sustainability."
 	  },
   ];
 

@@ -93,7 +93,7 @@ const SearchBar = () => {
             aria-autocomplete="list"
             required
             id="search"
-            className={`block w-full outline-0 p-2 pl-10 text-sm text-gray-900 bg-white  border border-gray-300 rounded-lg`}
+            className={`block w-full outline-0 p-2 pl-10 text-sm text-gray-900 bg-white  border border-gray-300 rounded-lg mt-10`}
             value={searchQuery}
             onChange={handleInputChange}
           />

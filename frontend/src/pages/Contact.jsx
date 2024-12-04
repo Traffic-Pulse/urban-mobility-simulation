@@ -41,7 +41,7 @@ const Contact = () => {
 
           {/* Contact Section */}
           <div className="flex flex-row w-full justify-center mx-auto">
-            <div className="flex justify-center w-full max-w-7xl gap-8">
+            <div className="flex justify-center w-full max-w-7xl gap-10 ml-40">
               {/* Contact Info */}
               <div className="bg-white shadow-lg rounded-lg p-6 md:w-1/2">
                 <h3 className="text-xl font-semibold text-gray-700 mb-4">Our Location</h3>

@@ -5,10 +5,9 @@ import copyrightSign from './copyright-sign.svg'
 import facebook from './facebook.svg'
 import hamburger from './hamburger.svg'
 import instagram from './instagram.svg'
-import support from './support.svg'
-import shieldTick from './shield-tick.svg'
+import environment from './environment-icon.svg'
+import realtime from './realtime-icon.svg'
 import star from './star.svg'
-import truckFast from './truck-fast.svg'
 import twitter from './twitter.svg'
 import github from './github-mark.svg'
 
@@ -20,10 +19,9 @@ export {
     facebook,
     hamburger,
     instagram,
-    support,
-    shieldTick,
+    environment,
+    realtime,
     star,
-    truckFast,
     twitter,
     github
 }
