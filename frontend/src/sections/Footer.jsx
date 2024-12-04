@@ -17,8 +17,8 @@ const Footer = () => {
             />
           </a>
           <p className='mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm'>
-            Get shoes ready for the new term at your nearest Nike store. Find
-            Your perfect Size In Store. Get Rewards
+          Get ready for the new term with advanced traffic simulation tools.
+          Find Your Perfect Solution Online.
           </p>
           <div className='flex items-center gap-5 mt-8'>
             {socialMedia.map((icon) => (
@@ -55,16 +55,10 @@ const Footer = () => {
 
       <div className='flex justify-between text-white-400 mt-12 max-sm:flex-col max-sm:items-center px-20'>
         <div className='flex flex-1 justify-start items-center gap-2 font-montserrat cursor-pointer'>
-          <img
-            src={copyrightSign}
-            alt='copyright sign'
-            width={20}
-            height={20}
-            className='rounded-full m-0'
-          />
-          <p>Copyright. All rights reserved.</p>
+         
+          
         </div>
-        <p className='font-montserrat cursor-pointer'>Terms & Conditions</p>
+        
       </div>
     </footer>
   );
