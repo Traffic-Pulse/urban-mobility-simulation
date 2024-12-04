@@ -10,7 +10,7 @@ const Feature1 = () => {
         <h2 className='font-palanquin capitalize text-4xl lg:max-w-lg font-bold'>
           Real-Time Traffic Simulation System
         </h2>
-        <p className='mt-4 lg:max-w-lg info-text'>
+        <p className='mt-4 lg:max-w-lg info-text text-justify'>
           Traffic Pulse is dedicated to designing and building a real-time traffic simulation system that optimizes existing roads, improves commute times, reduces CO2 emissions, and promotes sustainability. Our team is committed to enhancing urban mobility analysis and traffic management through innovative technology.
         </p>
         {/* <div className='mt-11'>

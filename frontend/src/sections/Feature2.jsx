@@ -19,10 +19,10 @@ const Feature2 = () => {
           <span className='text-coral-green'>Our </span>
           Solution
         </h2>
-        <p className='mt-4 info-text'>
+        <p className='mt-4 info-text text-justify'>
         Experience a groundbreaking approach to urban traffic management with our advanced Traffic and Urban Mobility Simulation. By combining cutting-edge technology and data-driven insights, our solution empowers city planners to analyze traffic flow, reduce congestion, and design smarter, more efficient transportation systems.
         </p>
-        <p className='mt-6 info-text'>
+        <p className='mt-6 info-text text-justify'>
         Explore a versatile platform that models diverse scenarios, evaluates environmental impacts, and offers innovative solutions for urban mobility challenges. Our simulation tool is designed to transform urban living by creating sustainable, connected, and resilient cities for the future.
         </p>
         <div className='mt-11 flex flex-wrap gap-4'>

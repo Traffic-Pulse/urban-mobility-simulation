@@ -1,4 +1,3 @@
-import { copyrightSign } from "../images/icons";
 import { Logo } from "../images";
 import { footerLinks, socialMedia } from "../constants";
 
