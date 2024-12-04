@@ -96,4 +96,3 @@ const executeSUMOCommands = async (osmFilePath, outputDir) => {
 module.exports = {
     downloadOSM,
 };
-
